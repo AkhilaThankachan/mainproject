@@ -13,6 +13,7 @@ use App\Models\gallery;
 use App\Models\payment;
 use App\Models\bill;
 use App\Models\tnc;
+use Mail;
 
 class uControl extends Controller
 {
@@ -55,6 +56,15 @@ class uControl extends Controller
             'password'=>$password
         ];
         $this->obj->insert('uregisters',$data);
+        
+        $mail=['name'=>$name,
+        'msg'=>'Welcome to Book My Turf.
+        You have succesfully registered with Book My Turf.'];
+        $user['to']=$email;
+        Mail::send('mail',$mail,function($message) use($user){
+            $message->to($user['to']);
+            $message->subject('Email Sending');
+        });
         return redirect('/');   
     }
     public function ulog(Request $rqst)
