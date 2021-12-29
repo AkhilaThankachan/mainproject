@@ -12,6 +12,7 @@
             <div class="row-sm-6">
             @foreach($res as $val)
             <form action="/gbill/{{$val->id}}" method="post" id="form">
+                
                 @csrf
                 
             <div class="form-group">

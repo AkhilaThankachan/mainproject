@@ -1,12 +1,12 @@
-@extends('manager.header')
+@extends('user.uheader')
 @section('main-body')
-
-<h2>View Bookings</h2>    
+<br><br><br>
+<br><br><br>
+<center><h2 style="font-family:serif">View Bookings</h2></center>  
     <div>
             <table class="table table-bordered">
                 <tr>
-                <td style="font-size:20px;">ID</td>
-                <td style="font-size:20px;">User ID</td>
+                <td style="font-size:20px;">Name</td>
                 <td style="font-size:20px;">Turf Name</td>
                 <td style="font-size:20px;">Turf Type</td>
                 <td style="font-size:20px;">Place</td>
@@ -18,8 +18,7 @@
 
                 @foreach($result as $value)
                 <tr>
-                <td>{{$value->id}}</td>
-                <td>{{$value->userid}}</td>
+                <td>{{$value->name}}</td>
                 <td>{{$value->tname}}</td>
                 <td>{{$value->ttype}}</td>
                 <td>{{$value->place}}</td>
@@ -27,10 +26,9 @@
                 <td>{{$value->time}}</td>
                 <td>{{$value->price}}</td>
                 <td>{{$value->status}}</td>
-                <td><a href="/bill/{{$value->id}}">Generate Bill</a></td>
+                <td><a href="/vbill/{{$value->id}}">View Bill</a></td>
                 </tr>
                 @endforeach
             </table>
         </div>
-
 @endsection

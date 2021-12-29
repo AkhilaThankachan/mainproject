@@ -36,9 +36,9 @@
 
     <!-- Header -->
     <header class="">
-      <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Turf Booking <em>Website</em></h2></a>
+          <a class="navbar-brand" href=""><h2>Book My <em>Turf</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -54,7 +54,7 @@
 
                 <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="/vbill">View Receipt</a></li>
+                <li class="nav-item"><a class="nav-link" href="/vreceipt">View Receipt</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/msg">Send Message</a></li>
 

@@ -101,8 +101,10 @@ class mControl extends Controller
     }
     public function bill($id)
     {
+        // $uid=session('sess');
         $data['res']=book::join('uregisters','uregisters.id','=','books.userid')
-        ->where('uregisters.id',$id)
+        ->where('books.id',$id)
+        // ->where('uregisters.id',$uid)
         ->select('books.id','books.tname','books.ttype','books.place','books.date','books.time','books.price','uregisters.name')
         ->get();
         return view('manager.bill',$data);

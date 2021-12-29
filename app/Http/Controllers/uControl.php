@@ -181,15 +181,23 @@ class uControl extends Controller
         $data['result']=gallery::get();
         return view('user.gallery',$data);
     }
-    public function viewbill()
+    public function viewbill($id)
     {
-        $id=session('sess');
+        $uid=session('sess');
         $data['result']=bill::join('uregisters','uregisters.name','=','bills.name')
-        ->where('uregisters.id',$id)
+        ->where('uregisters.id',$uid)
+        ->where('bills.id',$id)
         ->select('bills.name','bills.tname','bills.ttype','bills.place','bills.date','bills.time','bills.price','bills.status')
         ->get();
         return view('user.vbill',$data);
     } 
+    public function vr()
+    {
+        $id=session('sess');
+        $name=uregister::where('id',$id)->value('name');
+        $data['result']=bill::where('name',$name)->get();
+        return view('user.vreceipt',$data);
+    }
     public function turfs()
     {
         $data['res']=turf::get();
